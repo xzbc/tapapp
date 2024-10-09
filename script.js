@@ -16,12 +16,13 @@ document.getElementById('clickerImage').addEventListener('click', function() {
     console.log('Current Image Index:', currentImageIndex);
     console.log('Threshold for next image:', clickThreshold * (currentImageIndex + 1));
     
-    // Проверка на количество кликов
-    if (Math.floor(score * 100000) >= clickThreshold * (currentImageIndex + 1)) {
-        console.log('Image should hide now');
-        if (currentImageIndex < taskImages.length) {
-            taskImages[currentImageIndex].style.display = 'none'; // Скрыть текущее изображение
-            currentImageIndex++; // Перейти к следующему изображению
-        }
+let clickThreshold = 0.004; // 400 нажатий в монетах
+
+// Проверка на количество кликов
+if (score >= clickThreshold * (currentImageIndex + 1)) {
+    console.log('Image should hide now');
+    if (currentImageIndex < taskImages.length) {
+        taskImages[currentImageIndex].style.display = 'none'; // Скрыть текущее изображение
+        currentImageIndex++; // Перейти к следующему изображению
     }
-});
+}
