@@ -69,3 +69,23 @@ h1 {
     margin-right: 5px; /* Отступ между изображениями */
     display: inline-block; /* Размещаем изображения в ряд */
 }
+
+.task-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.taskButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.taskButton:hover {
+    background-color: #0056b3;
+}
