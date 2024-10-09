@@ -1,3 +1,6 @@
+// Определение переменной score
+let score = localStorage.getItem('clickScore') ? parseFloat(localStorage.getItem('clickScore')) : 0;
+
 let clickerImage = document.getElementById('clickerImage');
 clickerImage.src = 'img/button.png'; // Убедись, что путь указан правильно
 
@@ -8,11 +11,14 @@ document.getElementById('clickerImage').addEventListener('click', function() {
     // Сохраняем новое значение счётчика в localStorage
     localStorage.setItem('clickScore', score);
 
-    // Проверка на количество кликов
-    console.log('Score:', score); // Выводим текущее значение счёта
-    console.log('Current Image Index:', currentImageIndex); // Выводим индекс текущего изображения
+    // Логи для отладки
+    console.log('Score:', score);
+    console.log('Current Image Index:', currentImageIndex);
+    console.log('Threshold for next image:', clickThreshold * (currentImageIndex + 1));
     
+    // Проверка на количество кликов
     if (Math.floor(score * 100000) >= clickThreshold * (currentImageIndex + 1)) {
+        console.log('Image should hide now');
         if (currentImageIndex < taskImages.length) {
             taskImages[currentImageIndex].style.display = 'none'; // Скрыть текущее изображение
             currentImageIndex++; // Перейти к следующему изображению
