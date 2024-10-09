@@ -4,22 +4,17 @@ let score = localStorage.getItem('clickScore') ? parseFloat(localStorage.getItem
 // Обновляем отображение счётчика на странице
 document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5);
 
-// Обработчик события для изображения
-document.getElementById('clickerImage').addEventListener('click', function() {
-    score += 0.00001;
-    document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5); // отображаем с точностью до 5 знаков
-
-    // Сохраняем новое значение счётчика в localStorage
-    localStorage.setItem('clickScore', score);
-});
-let score = 0;
 let clickThreshold = 400; // Лимит кликов для каждой картинки
 let taskImages = document.querySelectorAll('.taskImage');
 let currentImageIndex = 0;
 
+// Обработчик события для изображения
 document.getElementById('clickerImage').addEventListener('click', function() {
     score += 0.00001; // Добавление монет за клик
-    document.getElementById('score').innerText = score.toFixed(5); // Обновление счётчика
+    document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5); // отображаем с точностью до 5 знаков
+
+    // Сохраняем новое значение счётчика в localStorage
+    localStorage.setItem('clickScore', score);
 
     // Проверка на количество кликов
     if (Math.floor(score * 100000) % clickThreshold === 0) { // Условие для каждой картинки
