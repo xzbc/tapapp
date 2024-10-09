@@ -4,7 +4,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем отступы */
+    background-image: url('img/background.gif'); /* Укажи путь к твоему GIF */
+    background-size: cover; /* Масштабирует фон так, чтобы он заполнил весь экран */
+    background-position: center; /* Центрирует фон */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-attachment: fixed; /* Фон остаётся на месте при прокрутке */
 }
 
 .container {
@@ -39,6 +45,7 @@ h1 {
 #clickerButton:active {
     background-color: #45a049;
 }
+
 #clickerImage {
     width: 100px; /* Уменьшение в 2-3 раза, можно регулировать */
     height: auto; /* Автоматическое сохранение пропорций */
@@ -48,13 +55,4 @@ h1 {
 
 #clickerImage:active {
     transform: scale(0.95); /* Эффект уменьшения при нажатии */
-}
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url('img/background.gif'); /* Укажи путь к твоему GIF */
-    background-size: cover; /* Масштабирует фон так, чтобы он заполнил весь экран */
-    background-position: center; /* Центрирует фон */
-    background-repeat: no-repeat; /* Изображение не повторяется */
-    background-attachment: fixed; /* Фон остаётся на месте при прокрутке */
 }
