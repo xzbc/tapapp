@@ -1,6 +1,14 @@
-let score = 0;
+// Проверка, есть ли сохранённый счёт в localStorage
+let score = localStorage.getItem('clickScore') ? parseFloat(localStorage.getItem('clickScore')) : 0;
 
+// Обновляем отображение счётчика на странице
+document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5);
+
+// Обработчик события для кнопки
 document.getElementById('clickerButton').addEventListener('click', function() {
-    score += 1; // или можно сделать инкремент на 0.00001 для монеток
-    document.getElementById('scoreboard').innerText = 'Clicks: ' + score;
+    score += 0.00001;
+    document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5); // отображаем с точностью до 5 знаков
+
+    // Сохраняем новое значение счётчика в localStorage
+    localStorage.setItem('clickScore', score);
 });
