@@ -49,3 +49,12 @@ h1 {
 #clickerImage:active {
     transform: scale(0.95); /* Эффект уменьшения при нажатии */
 }
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/background.gif'); /* Укажи путь к твоему GIF */
+    background-size: cover; /* Масштабирует фон так, чтобы он заполнил весь экран */
+    background-position: center; /* Центрирует фон */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-attachment: fixed; /* Фон остаётся на месте при прокрутке */
+}
