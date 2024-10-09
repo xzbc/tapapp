@@ -1,6 +1,8 @@
 document.getElementById('clickerImage').addEventListener('click', function() {
     score += 0.00001; // Добавление монет за клик
     document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5); // отображаем с точностью до 5 знаков
+let clickerImage = document.getElementById('clickerImage');
+clickerImage.src = 'img/button.png'; // Убедись, что путь указан правильно
 
     // Сохраняем новое значение счётчика в localStorage
     localStorage.setItem('clickScore', score);
