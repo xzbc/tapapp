@@ -51,3 +51,15 @@ function checkResetTime() {
 
 // Проверяем при загрузке страницы
 checkResetTime();
+
+let taskIndicator = 0;
+
+document.querySelectorAll('.taskButton').forEach((button, index) => {
+    button.addEventListener('click', function() {
+        score += 4; // Добавляем 4 монеты за выполнение задания
+        document.getElementById('scoreboard').innerText = 'Coins: ' + score.toFixed(5);
+        
+        taskIndicator++;
+        document.getElementById('taskIndicator').innerText = 'Индикатор: ' + taskIndicator;
+    });
+});
