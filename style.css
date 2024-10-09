@@ -39,3 +39,13 @@ h1 {
 #clickerButton:active {
     background-color: #45a049;
 }
+#clickerImage {
+    width: 100px; /* Уменьшение в 2-3 раза, можно регулировать */
+    height: auto; /* Автоматическое сохранение пропорций */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#clickerImage:active {
+    transform: scale(0.95); /* Эффект уменьшения при нажатии */
+}
