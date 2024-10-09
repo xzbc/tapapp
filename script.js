@@ -9,10 +9,10 @@ document.getElementById('clickerImage').addEventListener('click', function() {
     console.log('Score:', score); // Выводим текущее значение счёта
     console.log('Current Image Index:', currentImageIndex); // Выводим индекс текущего изображения
     
-   if (Math.floor(score * 100000) >= clickThreshold * (currentImageIndex + 1)) { // условие для картинок
-        if (currentImageIndex < taskImages.length) {
-            taskImages[currentImageIndex].style.display = 'none'; // Скрыть текущее изображение
-            currentImageIndex++; // Перейти к следующему изображению
-        }
+   // Проверка на количество кликов
+if (Math.floor(score * 100000) >= clickThreshold * (currentImageIndex + 1)) {
+    if (currentImageIndex < taskImages.length) {
+        taskImages[currentImageIndex].style.display = 'none'; // Скрыть текущее изображение
+        currentImageIndex++; // Перейти к следующему изображению
     }
-});
+}
