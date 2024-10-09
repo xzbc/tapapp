@@ -56,3 +56,16 @@ h1 {
 #clickerImage:active {
     transform: scale(0.95); /* Эффект уменьшения при нажатии */
 }
+#taskImages {
+    position: absolute; /* Позиционируем в верхнем углу */
+    top: 10px; /* Отступ сверху */
+    left: 10px; /* Отступ слева */
+    display: flex; /* Для размещения изображений в ряд */
+}
+
+.taskImage {
+    width: 40px; /* Размер изображений */
+    height: auto; /* Сохранение пропорций */
+    margin-right: 5px; /* Отступ между изображениями */
+    display: inline-block; /* Размещаем изображения в ряд */
+}
